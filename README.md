@@ -18,7 +18,7 @@ Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
 ### `void I2C_Memory_Init(I2C_MemoryTypeDef *pMemory)`
 ### `I2C_Memory_StatusTypeDef I2C_Memory_SingleWrite(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t data, uint32_t timeout)`
-I2C_Memory_StatusTypeDef I2C_Memory_BurstWrite(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t size, uint32_t timeout)`
+### `I2C_Memory_StatusTypeDef I2C_Memory_BurstWrite(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t size, uint32_t timeout)`
 ### `I2C_Memory_StatusTypeDef I2C_Memory_SingleRead(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t timeout)`
 ### `I2C_Memory_StatusTypeDef I2C_Memory_BurstRead(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t size, uint32_t timeout)`
 
