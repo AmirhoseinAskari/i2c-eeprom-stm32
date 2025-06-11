@@ -3,14 +3,14 @@
 Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
 ## 🔧 Features
-- ✅ **Fully compatible with STM32 HAL** — supports **all STM32 MCU series**
-- 📦 **Universal AT24Cxx support** — automatic 8-bit / 16-bit addressing and memory size handling
-- 🧠 **Multi-device support** — manage multiple EEPROMs independently on the same I²C bus
+- 🔗 **Fully compatible with STM32 HAL** — supports **all STM32 MCU series**
+- 💾 **Universal AT24Cxx support** — automatic 8-bit / 16-bit addressing and memory size handling
+- 🔀 **Multi-device support** — manage multiple EEPROMs independently on the same I²C bus
 - 🛡️ **MISRA-C-style design** — clean, safe, and portable for embedded and safety-critical applications
-- 🔌 **Write-protect support** — optional GPIO abstraction for controlling the WP (Write Protect) pin
+- 🔒 **Write-protect support** — optional GPIO abstraction for controlling the WP (Write Protect) pin
 - ⚡ **Optimized memory access** — low-overhead and high-speed read/write using efficient HAL wrappers
-- 🧭 **Structured configuration** — uses `I2C_MemoryTypeDef` objects for clean, scalable integration
-- 📐 **Modular and portable** — works with STM32CubeIDE, Keil, IAR, or Makefile-based environments
+- 🗂️ **Structured configuration** — uses `I2C_MemoryTypeDef` objects for clean, scalable integration
+- 🔄 **Modular and portable** — works with STM32CubeIDE, Keil, IAR, or Makefile-based environments
 
 ## ⚙️ How to use this library
 
@@ -53,7 +53,8 @@ Reads one byte from a specified memory address.
 Reads multiple bytes from the EEPROM starting at a given address.
 
 ## 💡 Example
-A complete working example is available in [`example/main.c`](./example/main.c). It demonstrates initialization, reading, writing, and working with multiple devices.
+A complete working example is available in [`example/main.c`](./example/main.c).
+It demonstrates initialization, reading, writing, and working with multiple devices.
 
 ## 📜 License
 This project is released under the [MIT License](./LICENSE).
