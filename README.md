@@ -4,63 +4,71 @@ Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
 ## 🔧 Features
 
-- ✅ Fully compatible with STM32 HAL I²C drivers  
-- 📦 Supports all standard AT24C EEPROM memory series
-- 🧠 Handles multiple EEPROM devices on the same I²C bus 
-- 🛡️ Built with MISRA-C coding practices for safety and portability  
-- 🧱 Supports 8-bit and 16-bit memory addressing  
-- 🕒 Timeout-based API for better fault tolerance  
-- 🚀 Page write and burst read support for optimized performance  
-- 🔌 Write-protect pin control included via GPIO abstraction  
-- 🧰 Modular and portable — drop into any STM32CubeIDE or Makefile-based project 
+- ✅ **Fully compatible with STM32 HAL** — supports **all STM32 MCU series**
+- 📦 **Universal AT24Cxx support** — automatic 8-bit / 16-bit addressing and size handling
+- 🧠 **Multi-device support** — independently manage multiple EEPROMs on the same I²C bus
+- 🛡️ **MISRA-C-style design** — clean, safe, and portable for embedded and safety-critical systems
+- 🔌 **Write-protect control** — simple GPIO abstraction for hardware write protection
+- ⚡ **Optimized memory access** — low-overhead, high-speed read/write via lightweight HAL wrappers
+- 🧭 **Structured memory object** — define EEPROMs using `I2C_MemoryTypeDef` with clean configuration
+- 📐 **Modular and portable** — works out of the box with STM32CubeIDE, Keil, IAR, and Makefile-based workflows
 
-## ✅ Requirements
-
-- STM32Cube HAL drivers  
-- Properly initialized I²C peripheral (via STM32CubeMX or manual config)  
-- Compatible EEPROM from the AT24C series
 
 ## ⚙️ Configuration & Integration
 
-1. **Configure I²C** in STM32CubeMX:  
-   - Enable an I²C instance (e.g., I2C1)  
-   - Set the **I²C Speed Mode** to **Standard Mode (100 kHz)**
+1. **Configure I²C in STM32CubeMX**  
+   - Enable an I²C peripheral (e.g., I2C1)  
+   - Set the **I²C Speed Mode** to **Standard Mode (100 kHz)** or **Fast Mode (400 kHz)**
 
-2. **Add the Library** to your project:  
-   - Include `i2c_memory.h` in your `main.c` or application code  
-   - Define your MCU series in `stm32_i2c_memory_config.h` 
+2. **Configure GPIO**  
+   - Set up a **GPIO output pin** to control the EEPROM's **Write-Protect (WP)** line (optional)
 
-3. **Define EEPROM Configuration**:
-   - Instantiate one or more `I2C_MemoryTypeDef` structs and assign unique addresses (A0/A1/A2 pins)
+3. **Add the Library to Your Project**  
+   - **Include** `i2c_memory.h` in your application source files  
+   - **Add** `i2c_memory.c` to your project build  
+   - **Define the correct STM32 series** in `stm32_i2c_memory_config.h` (e.g., `_STM32F1`)  
+   - **Add the library path** to your compiler’s include directories
 
-4. **Build and flash**. See `example/main.c` for usage.
+4. **Define EEPROM Configuration**  
+   - Create one or more `I2C_MemoryTypeDef` instances  
+   - Set the I²C handle and hardware address pins (A0/A1/A2)
+
+5. **Build and Flash**  
+   - Refer to [`example/main.c`](./example/main.c) for a complete usage demo
+
 
 ## 🧪 API Reference
 
-Each function returns a status of type `I2C_Memory_StatusTypeDef`.
+Each function returns an `I2C_Memory_StatusTypeDef` status code.
 
-### `void I2C_Memory_Init(I2C_MemoryTypeDef *pMemory)`
-Initializes memory configuration, computes device address, and sets up write-protect GPIO (if used).
+### `I2C_Memory_Init(I2C_MemoryTypeDef *pMemory)`  
+Initializes an EEPROM instance, calculates the full device address, and prepares WP pin (if used).
 
-### `I2C_Memory_StatusTypeDef I2C_Memory_SingleWrite(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t data, uint32_t timeout)`
-Writes a single byte to the given EEPROM memory address.
+### `I2C_Memory_SingleWrite(...)`  
+Writes a single byte to the specified EEPROM memory address.
 
-### `I2C_Memory_StatusTypeDef I2C_Memory_BurstWrite(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t size, uint32_t timeout)`
-Writes multiple bytes (burst/page write) starting from a specified memory address.
+### `I2C_Memory_BurstWrite(...)`  
+Writes multiple bytes (burst/page mode) starting from a target memory address.
 
-### `I2C_Memory_StatusTypeDef I2C_Memory_SingleRead(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t timeout)`
-Reads a single byte from the specified memory address.
+### `I2C_Memory_SingleRead(...)`  
+Reads one byte from a specified memory address.
 
-### `I2C_Memory_StatusTypeDef I2C_Memory_BurstRead(I2C_MemoryTypeDef *pMemory, uint32_t address, uint8_t *pData, uint32_t size, uint32_t timeout)`
-Reads multiple bytes starting from the specified memory address.
+### `I2C_Memory_BurstRead(...)`  
+Reads multiple bytes from the EEPROM starting at a given address.
+
 
 ## 💡 Example
-A working example is provided in [`example/main.c`](./example/main.c), showing full integration with HAL, multiple EEPROMs, and read/write testing.
+
+A fully working usage example is included in [`example/main.c`](./example/main.c). It demonstrates how to initialize the memory, perform read/write operations, and work with multiple devices.
+
 
 ## 📜 License
-This project is licensed under the [MIT License](./LICENSE).
+
+This project is released under the [MIT License](./LICENSE).
+
 
 ## 👤 Author
+
 **Amirhossein Askari**  
 📧 theamiraskarii@gmail.com  
 🔗 [GitHub Profile](https://github.com/AmirhoseinAskari)
