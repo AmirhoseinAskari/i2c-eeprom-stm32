@@ -31,9 +31,6 @@ Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
    - Create one or more `I2C_MemoryTypeDef` instances
    - Set the I²C handle and the device address (using A0/A1/A2 pin configuration)
 
-5. **Build and Flash**  
-   - Use the example in [`example/main.c`](./example/main.c) to guide your implementation
-
 ## 🧪 API Reference
 Each function returns an `I2C_Memory_StatusTypeDef` status code.
 
