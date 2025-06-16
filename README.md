@@ -1,4 +1,4 @@
-# i2c-eeprom-stm32
+# I2C EEPROM STM32 HAL Driver
 
 Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
