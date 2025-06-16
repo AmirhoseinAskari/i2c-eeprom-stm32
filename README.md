@@ -23,7 +23,7 @@ Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
 3. **Add the Library to Your Project**
    - **Include** `i2c_memory.h` in your application code
-   - **Add** `i2c_memory.c` to your build system
+   - **Add** `i2c_memory.c` to your compiler
    - **Set the STM32 MCU series macro** in `stm32_i2c_memory_config.h`
    - **Add the library folder** to your compiler’s include paths
 
