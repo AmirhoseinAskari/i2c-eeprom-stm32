@@ -13,10 +13,10 @@ int main(void)
     /* Initialize all configured peripherals (HAL, GPIO, I2C, etc.) */
     // ...
     // ...
-	   // ...
+    // ...
 	
    
-	   // Setup eeprom memory device 1 parameters
+    // Setup eeprom memory device 1 parameters
     memory1.I2Cx = hi2c1;
     memory1.WP_GPIO = GPIOB;
     memory1.WP_Pin = GPIO_PIN_3;
@@ -49,6 +49,6 @@ int main(void)
  
     while (1)
     {
-		       // Your application code here   
+        // Your application code here   
     }
 }
