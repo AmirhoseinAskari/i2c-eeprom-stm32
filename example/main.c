@@ -20,8 +20,7 @@ int main(void)
     memory1.I2Cx = hi2c1;
     memory1.WP_GPIO = GPIOB;
     memory1.WP_Pin = GPIO_PIN_3;
-    memory1.MemoryCode = I2C_MEM_CODE_AT24C512;
-    memory1.A0_PinState = 0;
+    memory1.MemoryCode = I2C_MEM_CODE_AT24C04;
     memory1.A1_PinState = 0;
     memory1.A2_PinState = 0;
     
@@ -38,7 +37,7 @@ int main(void)
     memory2.WP_Pin = GPIO_PIN_4;
     memory2.MemoryCode = I2C_MEM_CODE_AT24C64;
     memory2.A0_PinState = 1;
-    memory2.A1_PinState = 0;
+    memory2.A1_PinState = 1;
     memory2.A2_PinState = 1;
     
     I2C_Memory_Init(&memory2);                                         // Initialize eeprom memory device 2
