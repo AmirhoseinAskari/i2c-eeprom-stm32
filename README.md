@@ -37,7 +37,7 @@ Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 ## 🧪 API Reference
 Each function returns an `I2C_Memory_StatusTypeDef` status code.
 
-### `I2C_Memory_Init(I2C_MemoryTypeDef *pMemory)`  
+### `I2C_Memory_Init(...)`  
 Initializes an EEPROM instance, calculates the full device address, and prepares WP pin (if used).
 
 ### `I2C_Memory_SingleWrite(...)`  
