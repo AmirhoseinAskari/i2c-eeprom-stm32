@@ -3,14 +3,14 @@
 Driver for using Serial EEPROM Products (AT24C family) in STM32 microcontrollers
 
 ## 🔧 Features
-- 🔗 **Fully compatible with STM32 HAL** — supports **all STM32 MCU series**
-- 💾 **Universal AT24Cxx support** — automatic 8-bit / 16-bit addressing and memory size handling
-- 🔀 **Multi-device support** — manage multiple EEPROMs independently on the same I²C bus
-- 🛡️ **MISRA-C-style design** — clean, safe, and portable for embedded and safety-critical applications
-- 🔒 **Write-protect support** — optional GPIO abstraction for controlling the WP (Write Protect) pin
-- ⚡ **Optimized memory access** — low-overhead and high-speed read/write using efficient HAL wrappers
-- 🗂️ **Structured configuration** — uses `I2C_MemoryTypeDef` objects for clean, scalable integration
-- 🔄 **Modular and portable** — works with STM32CubeIDE, Keil, IAR, or Makefile-based environments
+- **Fully compatible with STM32 HAL** — supports **all STM32 MCU series**
+- **Universal AT24Cxx support** — automatic 8-bit / 16-bit addressing and memory size handling
+- **Multi-device support** — manage multiple EEPROMs independently on the same I²C bus
+- **MISRA-C-style design** — clean, safe, and portable for embedded and safety-critical applications
+- **Write-protect support** — optional GPIO abstraction for controlling the WP (Write Protect) pin
+- **Optimized memory access** — low-overhead and high-speed read/write using efficient HAL wrappers
+- **Structured configuration** — uses `I2C_MemoryTypeDef` objects for clean, scalable integration
+- **Modular and portable** — works with STM32CubeIDE, Keil, IAR, or Makefile-based environments
 
 ## ⚙️ How to use this library
 
